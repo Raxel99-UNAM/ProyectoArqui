@@ -1,3 +1,18 @@
+<?php require_once 'db_connect.php';
+
+$espacio_id = 1;
+
+$query_espacio = "SELECT * FROM espacios_urbanos WHERE id = $espacio_id";
+$result_espacio = mysqli_query($conn, $query_espacio);
+$espacio = mysqli_fetch_assoc($result_espacio);
+
+$nombre_espacio = $espacio['nombre'];
+$descripcion_proyecto_original = $espacio['descripcion_proyecto_original'];
+$ubicacion = $espacio['ubicacion'];
+$contexto_historico = $espacio['contexto_historico'];
+$transformaciones = $espacio['transformaciones'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,15 +69,14 @@
             </div>
 
             <div class="informacion__principal seccion">
-                <h1 class="titulo">Palacio de Minería</h1>
+                <h1 class="titulo"> <?php echo $nombre_espacio; ?></h1>
                 <img class="imagen-edificio" src="https://espacioarquitectonicoenmexico.files.wordpress.com/2018/06/mineria-1.jpg?w=1000" alt="Palacio-Mineria">
             </div>
 
             <div class="ubicacion seccion">
                 <h2 class="titulo">Ubicación</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque accusantium repellendus ex, consequuntur saepe, quod totam debitis labore iusto earum similique quos eligendi vitae incidunt eius! Quas explicabo cum vero?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem, repellat placeat id reprehenderit, sit dicta aut fugit voluptatem architecto ducimus omnis exercitationem odit eaque ut, quo itaque doloribus expedita?
+                    <?php echo $ubicacion; ?>   
                 </p>
 
                 <div class="imagenes-ubicacion">
@@ -77,8 +91,7 @@
             <div class="corriente-estilistica seccion">
                 <h2 class="titulo">Corriente Estilistica</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates dolorem nam modi atque architecto natus illum qui harum reiciendis, beatae mollitia voluptas! Sed minus vitae mollitia dignissimos aperiam nemo.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt animi voluptatibus beatae quibusdam repellat, fugit minus delectus, accusamus enim ea ipsam. Non eligendi reprehenderit sed assumenda quae aperiam sapiente placeat.
+                    <?php echo $descripcion_proyecto_original; ?>
                 </p>
 
                 <img class="imagen-edificio" src="https://espacioarquitectonicoenmexico.files.wordpress.com/2018/06/mineria-4.png?w=400&h=269" alt="">
@@ -88,8 +101,7 @@
                 <h2 class="titulo">Historia</h2>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem itaque, quo ducimus ab laborum sapiente nulla iure minima assumenda ipsum at, tempore eligendi, ipsa qui perferendis tempora modi praesentium similique!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit molestiae fugiat corporis suscipit, voluptates expedita provident quisquam sint quam doloribus dolorum perferendis deleniti similique doloremque veritatis repellat tempore cupiditate adipisci?
+                    <?php echo $contexto_historico; ?>
                 </p>
 
                 <img class="imagen-edificio" src="https://espacioarquitectonicoenmexico.files.wordpress.com/2018/06/mineria-4.png?w=400&h=269" alt="">
@@ -101,8 +113,7 @@
                 <h2 class="titulo">Transformaciones</h2>
 
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio mollitia, nobis dolorum voluptatem incidunt natus porro dicta quibusdam atque tenetur, aliquam praesentium cumque dolor quia consectetur, quod modi amet culpa?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, obcaecati. Soluta quaerat architecto, ipsum eius pariatur fuga aliquam quas dolorum molestiae ullam maiores dolorem inventore expedita hic numquam quidem praesentium.
+                    <?php echo $transformaciones; ?>
                 </p>
 
                 <img class="imagen-edificio" src="https://espacioarquitectonicoenmexico.files.wordpress.com/2018/06/mineria-4.png?w=400&h=269" alt="">
