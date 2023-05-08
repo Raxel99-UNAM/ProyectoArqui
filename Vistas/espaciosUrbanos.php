@@ -29,9 +29,9 @@ $transformaciones = $espacio['transformaciones'];
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="C:\Users\Equipo04\Desktop\PP Arqui\favicon\apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\Equipo04\Desktop\PP Arqui\favicon\favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\Equipo04\Desktop\PP Arqui\favicon\favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="..\favicon\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="..\favicon\favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
         
 </head>
@@ -47,10 +47,10 @@ $transformaciones = $espacio['transformaciones'];
         
                 <div class="navegacion">
                     <ul class="links">
-                        <li class="link"><a href="\Vistas\inicio.html">Inicio</a></li>
-                        <li class="link"><a href="\Vistas\edificios.html">Edificios</a></li>
-                        <li class="link"><a href="\Vistas\espaciosUrbanos.php">Espacios Urbanos</a></li>
-                        <li class="link"><a href="\Vistas\biografias.html">Biografías</a></li>
+                        <li class="link"><a href="inicio.html">Inicio</a></li>
+                        <li class="link"><a href="edificios.html">Edificios</a></li>
+                        <li class="link"><a href="espaciosUrbanos.php">Espacios Urbanos</a></li>
+                        <li class="link"><a href="biografias.html">Biografías</a></li>
                     </ul>
                 </div>
         
