@@ -1,4 +1,4 @@
-<?php require_once 'db_connect.php';
+<?php require_once 'ProyectoArqui/BaseDatos/db_connect.php';
 
 $espacio_id = 1;
 
@@ -21,7 +21,7 @@ $transformaciones = $espacio['transformaciones'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacios Urbanos</title>
 
-    <link rel="stylesheet" href="/Diseño/styles.css">
+    <link rel="stylesheet" href="ProyectoArqui/Diseño/styles.css">
     
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
