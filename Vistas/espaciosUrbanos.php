@@ -48,9 +48,9 @@ $transformaciones = $espacio['transformaciones'];
                 <div class="navegacion">
                     <ul class="links">
                         <li class="link"><a href="inicio.html">Inicio</a></li>
-                        <li class="link"><a href="edificios.html">Edificios</a></li>
+                        <li class="link"><a href="edificios.php">Edificios</a></li>
                         <li class="link"><a href="espaciosUrbanos.php">Espacios Urbanos</a></li>
-                        <li class="link"><a href="biografias.html">Biografías</a></li>
+                        <li class="link"><a href="biografias.php">Biografías</a></li>
                     </ul>
                 </div>
         
