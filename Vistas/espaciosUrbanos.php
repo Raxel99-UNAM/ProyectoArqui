@@ -64,7 +64,7 @@ $transformaciones = $espacio['transformaciones'];
 
             <div class="decoracion">
                 <div class="circulo">
-
+                <img class="Prueba" src="https://www.msn.com/es-mx/entretenimiento/musica/arrojan-a-beb%C3%A9-al-escenario-durante-concierto-de-k-pop/ar-AA1aRXhB?ocid=msedgntp&cvid=72b3fdc653d247469f398492cdd9b9a4&ei=10&fullscreen=true#image=1"alt="Test">
                 </div>
             </div>
 
