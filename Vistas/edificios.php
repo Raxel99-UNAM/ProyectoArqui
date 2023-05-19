@@ -1,10 +1,9 @@
 <?php
 require_once '../BaseDatos/db_connect.php'; // Asegúrate de proporcionar la ruta correcta al archivo db_connect.php
 
-$query = "SELECT * FROM edificaciones";
+$query = "SELECT * FROM edificaciones ORDER BY fecha_creacion DESC";
 $result = mysqli_query($conn, $query);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">

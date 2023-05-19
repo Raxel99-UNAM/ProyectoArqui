@@ -1,5 +1,8 @@
 <?php
 require_once '../BaseDatos/db_connect.php';
+
+$query = "SELECT * FROM biografias ORDER BY fecha_creacion DESC";
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +50,9 @@ require_once '../BaseDatos/db_connect.php';
         </div>
 
 
-        <!-- Información Edificio -->
+        <!-- Información Biografía -->
 
-        <div class="edificio container">
+        <div class="biografia container">
 
             <div class="decoracion">
                 <div class="circulo">
@@ -58,23 +61,16 @@ require_once '../BaseDatos/db_connect.php';
             </div>
 
             <div class="informacion__principal seccion">
-                <?php
-                $sql = "SELECT arquitectos.id, arquitectos.nombre, biografias.año_ciudad_nacimiento, biografias.lugar_estudios, biografias.disciplina, biografias.principales_obras, biografias.elementos_caracteristicos FROM arquitectos JOIN biografias ON arquitectos.biografia_id = biografias.id";
-                $result = mysqli_query($conn, $sql);
-
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<div class="biografia">';
-                        echo '<h2 class="nombre">' . $row['nombre'] . '</h2>';
-                        echo '<p>Año y ciudad de nacimiento: ' . $row['año_ciudad_nacimiento'] . '</p>';
-                        echo '<p>Lugar de estudios: ' . $row['lugar_estudios'] . '</p>';
-                        echo '<p>Disciplina: ' . $row['disciplina'] . '</p>';
-                        echo '<p>Principales obras: ' . $row['principales_obras'] . '</p>';
-                        echo '<p>Elementos característicos: ' . $row['elementos_caracteristicos'] . '</p>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo '<p>No hay biografías disponibles.</p>';
+            <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class='biografia'>";
+                    echo "<h2>" . $row['nombre'] . "</h2>";
+                    echo "<p>Año y ciudad de nacimiento: " . $row['año_ciudad_nacimiento'] . "</p>";
+                    echo "<p>Lugar de estudios: " . $row['lugar_estudios'] . "</p>";
+                    echo "<p>Disciplina: " . $row['disciplina'] . "</p>";
+                    echo "<p>Principales obras: " . $row['principales_obras'] . "</p>";
+                    echo "<p>Elementos característicos: " . $row['elementos_caracteristicos'] . "</p>";
+                    echo "</div>";
                 }
                 ?>
             </div>
@@ -91,3 +87,4 @@ require_once '../BaseDatos/db_connect.php';
 
 </body>
 </html>
+
