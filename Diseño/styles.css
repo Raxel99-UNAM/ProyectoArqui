@@ -156,6 +156,7 @@ body {
   }
   
   /* Cambia el color de los elementos del menú de navegación al pasar el mouse */
+```css
   .navbar a:hover {
     background-color: #ddd;
     color: black;
@@ -202,4 +203,5 @@ body {
       text-align: left;
     }
   }
+
   

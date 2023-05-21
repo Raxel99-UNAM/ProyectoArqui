@@ -1,7 +1,7 @@
 <?php
-require_once '../BaseDatos/db_connect.php';
+require_once '../BaseDatos/db_connect.php'; // Asegúrate de proporcionar la ruta correcta al archivo db_connect.php
 
-$query = "SELECT * FROM biografias ORDER BY fecha_creacion DESC";
+$query = "SELECT * FROM biografias ORDER BY año_ciudad_nacimiento DESC";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $query);
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="..\favicon\apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="..\favicon\favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
         
@@ -76,15 +76,3 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
     </div>
-    
-<footer>
-    <div class="Pie-pagina">
-        <p>
-            Lorem ipsum dolor, s
-        </p>
-    </div>
-</footer>
-
-</body>
-</html>
-
