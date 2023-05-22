@@ -13,7 +13,7 @@ $result = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Espacios Urbanos</title>
-    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../Diseño/styles.css">
     <!-- Aquí incluimos la librería de Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP7dRMjVGQuZ5BpzxGvJfsr50UI_-zTTI"></script>
 </head>
