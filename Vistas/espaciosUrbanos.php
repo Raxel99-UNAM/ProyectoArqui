@@ -37,7 +37,7 @@ $result = $conexion->query($sql);
         <div class="header-bg">
             <header class="header container">
                 <div class="titulo-contenedor">
-                    <h1 class="titulo">Edificios</h1>
+                    <h1 class="titulo">Espacios Urbanos</h1>
                 </div>
                 <div class="navegacion">
                     <ul class="links">
