@@ -104,45 +104,6 @@ body {
     text-decoration: underline;
 }
 
-.Pie-pagina {
-    height: 150px;
-    background-color: rgb(53, 52, 52);
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-align: center;
-    font-size: 45px;
-    padding: 0, 0;
-    margin-top: 25px;
-    flex-shrink: 0;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.footer-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 0 10px;
-}
-
-.footer-links a {
-    color: #333;
-    text-decoration: none;
-}
-
-.footer-credits {
-    text-align: center;
-    font-size: 14px;
-    color: #999;
-}
-
 /* Estilo para el menú de navegación */
 .navbar {
     display: flex;
@@ -217,9 +178,8 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     overflow: hidden;
     width: 90%;
-    max-width: 300px;
-    margin: 20px;
-    background-color: white;
+    max-width: 600px;
+    margin: 40px auto 0px;
 }
 
 .card img {
@@ -230,6 +190,7 @@ body {
 
 .card-content {
     padding: 20px;
+    background-color: white;
 }
 
 .card-content h2 {
@@ -237,4 +198,39 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }
-  
+
+.card-content p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.card-content a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #4e8aec;
+    font-weight: bold;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+.google-map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+.Pie-pagina {
+    height: 150px;
+    background-color: rgb(53, 52, 52);
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 45px;
+    padding: 0, 0;
+    margin-top: 25px;
+    flex-shrink: 0;
+}
