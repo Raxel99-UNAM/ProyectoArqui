@@ -1,7 +1,7 @@
 <?php
-require_once '../BaseDatos/db_connect.php'; // Asegúrate de proporcionar la ruta correcta al archivo db_connect.php
+require_once '../BaseDatos/db_connect.php';
 
-$query = "SELECT * FROM biografias ORDER BY año_ciudad_nacimiento DESC";
+$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.biografia_id = biografias.id ORDER BY biografias.año_ciudad_nacimiento DESC";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $query);
     <title>Biografías</title>
 
     <link rel="stylesheet" href="../Diseño/styles.css">
-    
+
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,18 +25,14 @@ $result = mysqli_query($conn, $query);
     <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="..\favicon\favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-        
 </head>
-
 <body>
     <div class="content-wrapper">
         <div class="header-bg">
             <header class="header container">
-        
                 <div class="titulo-contenedor">
                     <h1 class="titulo">Biografías</h1>
                 </div>
-        
                 <div class="navegacion">
                     <ul class="links">
                         <li class="link"><a href="inicio.html">Inicio</a></li>
@@ -45,44 +41,37 @@ $result = mysqli_query($conn, $query);
                         <li class="link"><a href="biografias.php">Biografías</a></li>
                     </ul>
                 </div>
-        
             </header>
         </div>
-
-
-        <!-- Información Biografía -->
-
         <div class="biografia container">
-
             <div class="decoracion">
                 <div class="circulo">
-
                 </div>
             </div>
-
             <div class="informacion__principal seccion">
-            <?php
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='biografia'>";
-                    echo "<h2>" . $row['nombre'] . "</h2>";
-                    echo "<p>Año y ciudad de nacimiento: " . $row['año_ciudad_nacimiento'] . "</p>";
-                    echo "<p>Lugar de estudios: " . $row['lugar_estudios'] . "</p>";
-                    echo "<p>Disciplina: " . $row['disciplina'] . "</p>";
-                    echo "<p>Principales obras: " . $row['principales_obras'] . "</p>";
-                    echo "<p>Elementos característicos: " . $row['elementos_caracteristicos'] . "</p>";
-                    echo "</div>";
-                }
+                <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='card'>";
+                        echo "<div class='card-content'>";
+                        echo "<h2>" . $row['nombre'] . "</h2>";
+                        echo "<p>Año y ciudad de nacimiento: " . $row['año_ciudad_nacimiento'] . "</p>";
+                        echo "<p>Lugar de estudios: " . $row['lugar_estudios'] . "</p>";
+                        echo "<p>Disciplina: " . $row['disciplina'] . "</p>";
+                        echo "<p>Principales obras: " . $row['principales_obras'] . "</p>";
+                        echo "<p>Elementos característicos: " . $row['elementos_caracteristicos'] . "</p>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
                 ?>
             </div>
         </div>
     </div>
     <footer>
-    <div class="Pie-pagina">
-        <p>
-            Lorem ipsum dolor, s
-        </p>
-    </div>
-</footer>
-
+        <div class="Pie-pagina">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
