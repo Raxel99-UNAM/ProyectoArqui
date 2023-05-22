@@ -76,3 +76,13 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
     </div>
+    <footer>
+    <div class="Pie-pagina">
+        <p>
+            Lorem ipsum dolor, s
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
