@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "arquitectura");
+$conexion = mysqli_connect("localhost", "root", "", "arqui");
 if ($conexion->connect_error) {
     die("La conexion falló: " . $conexion->connect_error);
 }
