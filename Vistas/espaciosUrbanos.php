@@ -33,6 +33,22 @@ $result = $conexion->query($sql);
 </head>
 
 <body>
+<div class="content-wrapper">
+        <div class="header-bg">
+            <header class="header container">
+                <div class="titulo-contenedor">
+                    <h1 class="titulo">Edificios</h1>
+                </div>
+                <div class="navegacion">
+                    <ul class="links">
+                        <li class="link"><a href="inicio.html">Inicio</a></li>
+                        <li class="link"><a href="edificios.php">Edificios</a></li>
+                        <li class="link"><a href="espaciosUrbanos.php">Espacios Urbanos</a></li>
+                        <li class="link"><a href="biografias.php">Biografías</a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
     <?php
     while ($espacio_urbano = mysqli_fetch_array($result)) {
     ?>
