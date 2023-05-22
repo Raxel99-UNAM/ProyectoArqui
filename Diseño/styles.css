@@ -244,34 +244,22 @@ body {
     padding: 20px;
     width: 90%;
     max-width: 800px;
-}
-
-.biografia .decoracion {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
-}
-
-.biografia .decoracion .circulo {
-    position: absolute;
-    background: rgba(94, 196, 225, 0.3);
-    border-radius: 50%;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .biografia h2 {
     margin: 0 0 15px 0;
-    color: #4e8aec;
+    color: #8B4513;  /* change the color to a shade of brown */
     font-size: 1.8em;
 }
 
 .biografia p {
     margin: 0 0 15px 0;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* Responsive style for smaller screens */
@@ -280,3 +268,4 @@ body {
         width: 95%;
     }
 }
+
