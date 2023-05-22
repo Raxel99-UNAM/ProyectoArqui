@@ -1,7 +1,26 @@
 <?php
-require_once '../BaseDatos/db_connect.php'; // Asegúrate de proporcionar la ruta correcta al archivo db_connect.php
+require_once '../BaseDatos/db_connect.php'; 
 
-$query = "SELECT * FROM edificaciones ORDER BY año_construccion DESC";
+$results_per_page = 10;
+
+$query = "SELECT * FROM edificaciones";
+$result = mysqli_query($conn, $query);
+$number_of_results = mysqli_num_rows($result);
+
+$number_of_pages = ceil($number_of_results / $results_per_page);
+
+if (!isset($_GET['page'])) {
+    $page = 1;
+} else {
+    $page = $_GET['page'];
+}
+
+$this_page_first_result = ($page - 1) * $results_per_page;
+
+$orderby = $_GET['orderby'] ?? 'año_construccion'; 
+$order = $_GET['order'] ?? 'DESC'; 
+
+$query = 'SELECT * FROM edificaciones ORDER BY ' . $orderby . ' ' . $order . ' LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -14,29 +33,23 @@ $result = mysqli_query($conn, $query);
     <title>Edificios</title>
 
     <link rel="stylesheet" href="../Diseño/styles.css">
-    
-    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="..\favicon\apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="..\favicon\favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
         
 </head>
-
 <body>
     <div class="content-wrapper">
         <div class="header-bg">
             <header class="header container">
-        
                 <div class="titulo-contenedor">
                     <h1 class="titulo">Edificios</h1>
                 </div>
-        
                 <div class="navegacion">
                     <ul class="links">
                         <li class="link"><a href="inicio.html">Inicio</a></li>
@@ -45,45 +58,46 @@ $result = mysqli_query($conn, $query);
                         <li class="link"><a href="biografias.php">Biografías</a></li>
                     </ul>
                 </div>
-        
             </header>
         </div>
 
-
-        <!-- Información Edificio -->
-
-        <div class="edificio container">
-
-            <div class="decoracion">
-                <div class="circulo">
-
-                </div>
-            </div>
-
-            <div class="informacion__principal seccion">
+        <div class="edificios container">
             <?php
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='edificio'>";
-                    echo "<h2>" . $row['nombre'] . "</h2>";
-                    echo "<p>Género y tipología: " . $row['genero_tipologia'] . "</p>";
-                    echo "<p>Uso actual: " . $row['uso_actual'] . "</p>";
-                    echo "<p>Año de construcción: " . $row['año_construccion'] . "</p>";
-                    echo "<a href='edificio.php?id=" . $row['id'] . "'>Ver más detalles</a>";
-                    echo "</div>";
-                }
-                ?>
-            </div>
-
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<div class='edificio'>";
+                echo "<h2>" . $row['nombre'] . "</h2>";
+                echo "<p>Género/Tipología: " . $row['genero_tipologia'] . "</p>";
+                echo "<p>Uso Actual: " . $row['uso_actual'] . "</p>";
+                echo "<p>Año de Construcción: " . $row['año_construccion'] . "</p>";
+                echo "</div>";
+            }
+            ?>
+        </div>
+        
+        <div class="pagination container">
+            <?php
+            for ($page = 1; $page <= $number_of_pages; $page++) {
+                echo '<a href="edificios.php?page=' . $page . '">' . $page . '</a> ';
+            }
+            ?>
         </div>
     </div>
-    
-<footer>
-    <div class="Pie-pagina">
-        <p>
-            Lorem ipsum dolor, s
-        </p>
-    </div>
-</footer>
+
+    <footer class="Pie-pagina">
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Edificios</a></li>
+                    <li><a href="#">Espacios Urbanos</a></li>
+                    <li><a href="#">Biografías</a></li>
+                </ul>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; 2023 - Arquitectura - UAM Iztapalapa</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
