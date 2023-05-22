@@ -83,21 +83,13 @@ $result = mysqli_query($conn, $query);
         </div>
     </div>
 
-    <footer class="Pie-pagina">
-        <div class="container">
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Edificios</a></li>
-                    <li><a href="#">Espacios Urbanos</a></li>
-                    <li><a href="#">Biografías</a></li>
-                </ul>
-            </div>
-            <div class="footer-credits">
-                <p>&copy; 2023 - Arquitectura - UAM Iztapalapa</p>
-            </div>
-        </div>
-    </footer>
+    <footer>
+    <div class="Pie-pagina">
+        <p>
+            Lorem ipsum dolor, s
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>
