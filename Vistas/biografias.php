@@ -1,3 +1,10 @@
+<?php
+require_once '../BaseDatos/db_connect.php';
+
+$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.biografia_id = biografias.id ORDER BY biografias.año_ciudad_nacimiento DESC";
+$result = mysqli_query($conn, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -107,3 +114,4 @@
     <?php endif; ?>
 </body>
 </html>
+
