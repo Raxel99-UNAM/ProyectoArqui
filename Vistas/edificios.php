@@ -36,26 +36,26 @@ $result = mysqli_query($conn, $query);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="..\favicon\apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="..\favicon\favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="..\favicon\favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-        
+    <link rel="manifest" href="site.webmanifest">  
 </head>
 <body>
 
     <?php session_start(); ?>
-        <?php if (!isset($_SESSION['authenticated'])): ?>
-            <form action="check_password.php" method="post">
-                <label for="password">Ingrese la contraseña para añadir un nuevo edificio:</label>
-                <input type="password" id="password" name="password">
-                <input type="submit" value="Ingresar">
-            </form>
-            <?php if (isset($_GET['incorrect_password'])): ?>
-                <p>La contraseña ingresada es incorrecta.</p>
-            <?php endif; ?>
+    <?php if (!isset($_SESSION['authenticated'])): ?>
+        <form action="check_password.php" method="post">
+            <label for="password">Ingrese la contraseña para añadir un nuevo edificio:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Ingresar">
+        </form>
+        <?php if (isset($_GET['incorrect_password'])): ?>
+            <p>La contraseña ingresada es incorrecta.</p>
         <?php endif; ?>
+    <?php endif; ?>
     
     <div class="content-wrapper">
         <div class="header-bg">
@@ -74,7 +74,7 @@ $result = mysqli_query($conn, $query);
             </header>
         </div>
 
-        <div class="edificios container">
+        <div class="edificios container slick-slider">
             <?php
             while ($row = mysqli_fetch_array($result)) {
                 echo "<div class='edificio'>";
@@ -105,22 +105,55 @@ $result = mysqli_query($conn, $query);
 </footer>
 
 <?php if (isset($_SESSION['authenticated'])): ?>
-        <form action="insert_edificio.php" method="post">
-            <label for="nombre">Nombre del edificio:</label>
-            <input type="text" id="nombre" name="nombre">
+    <form action="insert_edificio.php" method="post">
+        <label for="nombre">Nombre del edificio:</label>
+        <input type="text" id="nombre" name="nombre">
 
-            <label for="genero_tipologia">Género/Tipología:</label>
-            <input type="text" id="genero_tipologia" name="genero_tipologia">
+        <label for="genero_tipologia">Género/Tipología:</label>
+        <input type="text" id="genero_tipologia" name="genero_tipologia">
 
-            <label for="uso_actual">Uso actual:</label>
-            <input type="text" id="uso_actual" name="uso_actual">
+        <label for="uso_actual">Uso actual:</label>
+        <input type="text" id="uso_actual" name="uso_actual">
 
-            <label for="año_construccion">Año de construcción:</label>
-            <input type="text" id="año_construccion" name="año_construccion">
+        <label for="año_construccion">Año de construcción:</label>
+        <input type="text" id="año_construccion" name="año_construccion">
 
-            <input type="submit" value="Añadir edificio">
-        </form>
-    <?php endif; ?>
+        <input type="submit" value="Añadir edificio">
+    </form>
+<?php endif; ?>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
 
 </body>
 </html>

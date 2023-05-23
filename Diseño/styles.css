@@ -166,7 +166,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     overflow: hidden;
-    width: 90%;
+    min-width: 300px;
     max-width: 600px;
     margin: 40px auto 0px;
 }
@@ -180,6 +180,7 @@ body {
 .card-content {
     padding: 20px;
     background-color: white;
+    width: 100%;
 }
 
 .card-content h2 {
@@ -250,6 +251,98 @@ body {
     line-height: 1.6;
     text-align: center;
 }
+
+/* Estilo para el carrusel de edificios */
+.edificios {
+    display: flex;
+    overflow: scroll;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.edificios .edificio {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.edificios .edificio h2 {
+    margin-bottom: 10px;
+    color: #8B4513; 
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.edificios .edificio p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pagination a {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Estilos para el formulario de inserción de edificios (solo visible cuando se ha autenticado) */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    background-color: #4e8aec;
+    color: #fff;
+}
+
+form input[type="submit"]:hover {
+    background-color: #3076b0;
+}
+
+/* tus otros estilos existentes */
+
+
 
 @media only screen and (max-width: 768px) {
     .biografia {
