@@ -1,13 +1,8 @@
 <?php
-session_start();
+require_once '../BaseDatos/db_connect.php';
 
-$conexion = mysqli_connect("localhost", "root", "", "arqui");
-if ($conexion->connect_error) {
-    die("La conexion falló: " . $conexion->connect_error);
-}
-
-$sql = "SELECT * FROM espacios_urbanos WHERE activo = 1 ORDER BY nombre";
-$result = $conexion->query($sql);
+$query = "SELECT * FROM espacios_urbanos WHERE activo = 1 ORDER BY nombre";
+$result = mysqli_query($conn, $query);
 ?>
 
 
