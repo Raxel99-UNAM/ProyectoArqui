@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $conexion = mysqli_connect("localhost", "root", "", "arquitectura");
+    $conexion = mysqli_connect("localhost", "root", "", "aquitectura");
 
     if ($conexion->connect_error) {
         die("La conexión falló: " . $conexion->connect_error);

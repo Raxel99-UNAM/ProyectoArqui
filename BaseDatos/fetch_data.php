@@ -17,6 +17,10 @@
     $sql_biografias = "SELECT * FROM biografias";
     $result_biografias = $conn->query($sql_biografias);
 
+    // Consulta para obtener información de biografias
+    $sql_usuarios = "SELECT * FROM usuarios";
+    $result_usuarios = $conn->query($sql_usuarios);
+
     // Cerrar conexión
     $conn->close();
 ?>

@@ -22,7 +22,7 @@ $tipos_edificaciones = $_POST['tipos_edificaciones'];
 $transformaciones = $_POST['transformaciones'];
 $principios_diseno = $_POST['principios_diseno'];
 
-$conexion = mysqli_connect("localhost", "root", "", "arquitectura");
+$conexion = mysqli_connect("localhost", "root", "", "aquitectura");
 
 if ($conexion->connect_error) {
     die("La conexión falló: " . $conexion->connect_error);
