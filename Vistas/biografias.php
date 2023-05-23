@@ -89,8 +89,6 @@ $result = mysqli_query($conn, $query);
     
     <?php if (isset($_SESSION['authenticated'])): ?>
         <form action="insert_biografia.php" method="post">
-            <label for="nombre">Nombre del arquitecto:</label>
-            <input type="text" id="nombre" name="nombre">
 
             <label for="año_ciudad_nacimiento">Año y ciudad de nacimiento:</label>
             <input type="text" id="año_ciudad_nacimiento" name="año_ciudad_nacimiento">
