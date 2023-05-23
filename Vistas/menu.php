@@ -42,8 +42,129 @@
         <main>
             <section class="inicio container">
                 <h2 class="titulo">Bienvenido</h2>
-                <p>Bienvenido al sitio web Espacio Arquitectónico en México, donde encontrarás información sobre edificios, espacios urbanos y biografías de arquitectos destacados en México.</p>
-                <p>Explora las diferentes secciones para conocer más sobre la arquitectura y el diseño urbano en México:</p>
+                    <div class="separador1">
+                        <div class="separador1-linea">
+                            <form action="insert_edificio.php" method="post">
+                            <label for="nombre">Nombre del edificio:</label>
+                            <input type="text" id="nombre" name="nombre">
+
+                            <!-- Resto de los campos del antiguo formulario -->
+
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" id="ubicacion" name="ubicacion">
+
+                            <label for="contexto_historico">Contexto histórico:</label>
+                            <textarea id="contexto_historico" name="contexto_historico"></textarea>
+
+                            <label for="descripcion_espacio">Descripción del espacio:</label>
+                            <textarea id="descripcion_espacio" name="descripcion_espacio"></textarea>
+
+                            <label for="plantas_arquitectonicas">Plantas arquitectónicas:</label>
+                            <textarea id="plantas_arquitectonicas" name="plantas_arquitectonicas"></textarea>
+
+                            <label for="fachadas_ornamentos">Fachadas y ornamentos:</label>
+                            <textarea id="fachadas_ornamentos" name="fachadas_ornamentos"></textarea>
+
+                            <label for="corriente_estilistica">Corriente estilística:</label>
+                            <input type="text" id="corriente_estilistica" name="corriente_estilistica">
+
+                            <label for="materiales_sistemas_constructivos">Materiales y sistemas constructivos:</label>
+                            <textarea id="materiales_sistemas_constructivos" name="materiales_sistemas_constructivos"></textarea>
+
+                            <label for="contexto_urbano">Contexto urbano:</label>
+                            <textarea id="contexto_urbano" name="contexto_urbano"></textarea>
+
+                            <label for="transformaciones">Transformaciones:</label>
+                            <textarea id="transformaciones" name="transformaciones"></textarea>
+
+                            <label for="activo">Activo:</label>
+                            <input type="checkbox" id="activo" name="activo">
+
+                            <input type="submit" value="Añadir edificio">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="separador2">
+                        <div class="separador2-linea">
+                        <form action="insert_biografia.php" method="post">
+                            <!-- Aquí agregarás una entrada para el ID del arquitecto -->
+
+                            <label for="arquitecto_id">ID de arquitecto:</label>
+                            <input type="number" id="arquitecto_id" name="arquitecto_id">
+
+                            <label for="año_ciudad_nacimiento">Año y ciudad de nacimiento:</label>
+                            <input type="text" id="año_ciudad_nacimiento" name="año_ciudad_nacimiento">
+
+                            <label for="lugar_estudios">Lugar de estudios:</label>
+                            <input type="text" id="lugar_estudios" name="lugar_estudios">
+
+                            <label for="disciplina">Disciplina:</label>
+                            <input type="text" id="disciplina" name="disciplina">
+
+                            <label for="principales_obras">Principales obras:</label>
+                            <input type="text" id="principales_obras" name="principales_obras">
+
+                            <label for="elementos_caracteristicos">Elementos característicos:</label>
+                            <input type="text" id="elementos_caracteristicos" name="elementos_caracteristicos">
+
+                            <input type="submit" value="Añadir biografía">
+                        </form>
+                        </div>
+                    </div>
+
+                    <div class="separador3">
+                        <div class="separador3-linea">
+                        <form action="insert_espacioUrbano.php" method="post">
+                            <label for="nombre">Nombre del espacio urbano:</label>
+                            <input type="text" id="nombre" name="nombre">
+
+                            <label for="año_establecimiento">Año de establecimiento:</label>
+                            <input type="number" id="año_establecimiento" name="año_establecimiento">
+
+                            <label for="funcion">Función:</label>
+                            <input type="text" id="funcion" name="funcion">
+
+                            <label for="arquitecto_id">ID del arquitecto:</label>
+                            <input type="number" id="arquitecto_id" name="arquitecto_id">
+
+                            <label for="latitud">Latitud:</label>
+                            <input type="number" id="latitud" name="latitud" step="any">
+
+                            <label for="longitud">Longitud:</label>
+                            <input type="number" id="longitud" name="longitud" step="any">
+
+                            <label for="contexto_historico">Contexto histórico:</label>
+                            <textarea id="contexto_historico" name="contexto_historico"></textarea>
+
+                            <label for="descripcion_proyecto_original">Descripción del proyecto original:</label>
+                            <textarea id="descripcion_proyecto_original" name="descripcion_proyecto_original"></textarea>
+
+                            <label for="orientacion">Orientación:</label>
+                            <input type="text" id="orientacion" name="orientacion">
+
+                            <label for="dimensiones">Dimensiones:</label>
+                            <input type="text" id="dimensiones" name="dimensiones">
+
+                            <label for="secciones">Secciones:</label>
+                            <textarea id="secciones" name="secciones"></textarea>
+
+                            <label for="elementos_imagen_urbana">Elementos de imagen urbana:</label>
+                            <textarea id="elementos_imagen_urbana" name="elementos_imagen_urbana"></textarea>
+
+                            <label for="tipos_edificaciones">Tipos de edificaciones:</label>
+                            <input type="text" id="tipos_edificaciones" name="tipos_edificaciones">
+
+                            <label for="transformaciones">Transformaciones:</label>
+                            <textarea id="transformaciones" name="transformaciones"></textarea>
+
+                            <label for="principios_diseno">Principios de diseño:</label>
+                            <textarea id="principios_diseno" name="principios_diseno"></textarea>
+
+                            <input type="submit" value="Añadir espacio urbano">
+                        </form>
+                        </div>
+                    </div>
             </section>
         </main>
     </div>
