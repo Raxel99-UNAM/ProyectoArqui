@@ -65,15 +65,15 @@ $result = mysqli_query($conn, $query);
                 <?php
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='card'>";
-                        echo "<div class='card-content'>";
-                        echo "<h2>" . $row['nombre'] . "</h2>";
-                        echo "<p>Año y ciudad de nacimiento: " . $row['año_ciudad_nacimiento'] . "</p>";
-                        echo "<p>Lugar de estudios: " . $row['lugar_estudios'] . "</p>";
-                        echo "<p>Disciplina: " . $row['disciplina'] . "</p>";
-                        echo "<p>Principales obras: " . $row['principales_obras'] . "</p>";
-                        echo "<p>Elementos característicos: " . $row['elementos_caracteristicos'] . "</p>";
-                        echo "</div>";
-                        echo "</div>";
+                            echo "<div class='card-content'>";
+                            echo "<h2>" . $row['nombre'] . "</h2>";
+                            echo "<p>Año y ciudad de nacimiento: " . $row['año_ciudad_nacimiento'] . "</p>";
+                            echo "<p>Lugar de estudios: " . $row['lugar_estudios'] . "</p>";
+                            echo "<p>Disciplina: " . $row['disciplina'] . "</p>";
+                            echo "<p>Principales obras: " . $row['principales_obras'] . "</p>";
+                            echo "<p>Elementos característicos: " . $row['elementos_caracteristicos'] . "</p>";
+                            echo "</div>";
+                            echo "</div>";
                     }
                 ?>
             </div>

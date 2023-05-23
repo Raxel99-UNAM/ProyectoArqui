@@ -24,9 +24,9 @@ body {
 }
 
 .seccion {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     width: 90%;
     max-width: 800px;
     margin: 40px auto 0px;
@@ -255,8 +255,8 @@ body {
 
 /* Estilo para el carrusel de edificios */
 .edificios {
-    display: flex;
-    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin: 20px 0;
     padding: 20px 0;
