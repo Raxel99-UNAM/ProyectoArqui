@@ -41,7 +41,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+    <div class="content-wrapper">
+            <div class="header-bg">
+                <header class="header container">
+                    <div class="titulo-contenedor">
+                        <h1 class="titulo">Espacios Urbanos</h1>
+                    </div>
+                    <div class="navegacion">
+                        <ul class="links">
+                            <li class="link"><a href="inicio.html">Inicio</a></li>
+                            <li class="link"><a href="edificios.php">Edificios</a></li>
+                            <li class="link"><a href="espaciosUrbanos.php">Espacios Urbanos</a></li>
+                            <li class="link"><a href="biografias.php">Biografías</a></li>
+                        </ul>
+                    </div>
+                </header>
+            </div>
+
     <div class="container">
         <form action="" method="POST">
             <label for="username">Nombre de usuario:</label>
@@ -56,6 +74,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (!empty($error)): ?>
             <p><?php echo $error; ?></p>
         <?php endif; ?>
+    </div>        
+
+<footer>
+    <div class="Pie-pagina">
+        <p>
+            Lorem ipsum dolor, s
+        </p>
     </div>
+</footer>
+
 </body>
 </html>
