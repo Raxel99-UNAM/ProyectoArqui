@@ -13,7 +13,7 @@ $disciplina = $_POST['disciplina'];
 $principales_obras = $_POST['principales_obras'];
 $elementos_caracteristicos = $_POST['elementos_caracteristicos'];
 
-$conexion = mysqli_connect("localhost", "root", "", "arqui");
+$conexion = mysqli_connect("localhost", "root", "", "arquitectura");
 
 if ($conexion->connect_error) {
     die("La conexión falló: " . $conexion->connect_error);

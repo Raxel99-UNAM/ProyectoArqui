@@ -12,7 +12,7 @@ $uso_actual = $_POST['uso_actual'];
 $año_construccion = $_POST['año_construccion'];
 $arquitecto_id = $_POST['arquitecto_id'];
 
-$conexion = mysqli_connect("localhost", "root", "", "arqui");
+$conexion = mysqli_connect("localhost", "root", "", "arquitectura");
 
 if ($conexion->connect_error) {
     die("La conexión falló: " . $conexion->connect_error);
