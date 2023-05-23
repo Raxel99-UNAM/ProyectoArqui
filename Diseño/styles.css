@@ -233,7 +233,7 @@ body {
     gap: 20px; /* Proporciona espacio entre los elementos */
 }
 
-.biografia-card {
+.biografia {
     background: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
