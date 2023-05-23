@@ -1,12 +1,10 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "arqui");
-if ($conexion->connect_error) {
-    die("La conexion falló: " . $conexion->connect_error);
-}
+require_once '../BaseDatos/db_connect.php';
 
-$sql = "SELECT * FROM espacios_urbanos ORDER BY nombre";
+$sql = "SELECT * FROM espacios_urbanos WHERE activo = 1 ORDER BY nombre";
 $result = $conexion->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -62,34 +60,34 @@ $result = $conexion->query($sql);
                 </div>
             </header>
         </div>
-    <?php
-    while ($espacio_urbano = mysqli_fetch_array($result)) {
-    ?>
-        <div class="card">
-            <div class="card-content">
-                <h2><?php echo $espacio_urbano['nombre']; ?></h2>
-                <p><?php echo $espacio_urbano['funcion']; ?></p>
-                <p><?php echo $espacio_urbano['año_establecimiento']; ?></p>
-                <!-- Aquí creamos el div donde se mostrará el mapa -->
-                <div id="mapa_<?php echo $espacio_urbano['id']; ?>" style="width: 100%; height: 400px;"></div>
-                <!-- Aquí creamos el script para mostrar el mapa -->
-                <script>
-                    var map = new google.maps.Map(document.getElementById('mapa_<?php echo $espacio_urbano['id']; ?>'), {
-                        zoom: 14,
-                        center: new google.maps.LatLng(<?php echo $espacio_urbano['latitud']; ?>, <?php echo $espacio_urbano['longitud']; ?>),
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    });
-                    var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(<?php echo $espacio_urbano['latitud']; ?>, <?php echo $espacio_urbano['longitud']; ?>),
-                        map: map
-                    });
-                </script>
-            </div>
+<?php
+while ($espacio_urbano = mysqli_fetch_array($result)) {
+?>
+    <div class="card">
+        <div class="card-content">
+            <h2><?php echo $espacio_urbano['nombre']; ?></h2>
+            <p><?php echo $espacio_urbano['funcion']; ?></p>
+            <p><?php echo $espacio_urbano['año_establecimiento']; ?></p>
+            <!-- Aquí creamos el div donde se mostrará el mapa -->
+            <div id="mapa_<?php echo $espacio_urbano['id']; ?>" style="width: 100%; height: 400px;"></div>
+            <!-- Aquí creamos el script para mostrar el mapa -->
+            <script>
+                var map = new google.maps.Map(document.getElementById('mapa_<?php echo $espacio_urbano['id']; ?>'), {
+                    zoom: 14,
+                    center: new google.maps.LatLng(<?php echo $espacio_urbano['latitud']; ?>, <?php echo $espacio_urbano['longitud']; ?>),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(<?php echo $espacio_urbano['latitud']; ?>, <?php echo $espacio_urbano['longitud']; ?>),
+                    map: map
+                });
+            </script>
         </div>
-    <?php
-    }
-    $conexion->close();
-    ?>
+    </div>
+<?php
+}
+$conexion->close();
+?>
 
 <footer>
     <div class="Pie-pagina">
@@ -104,21 +102,52 @@ $result = $conexion->query($sql);
             <label for="nombre">Nombre del espacio urbano:</label>
             <input type="text" id="nombre" name="nombre">
 
+            <label for="año_establecimiento">Año de establecimiento:</label>
+            <input type="number" id="año_establecimiento" name="año_establecimiento">
+
             <label for="funcion">Función:</label>
             <input type="text" id="funcion" name="funcion">
 
-            <label for="año_establecimiento">Año de establecimiento:</label>
-            <input type="text" id="año_establecimiento" name="año_establecimiento">
+            <label for="arquitecto_id">ID del arquitecto:</label>
+            <input type="number" id="arquitecto_id" name="arquitecto_id">
 
             <label for="latitud">Latitud:</label>
-            <input type="text" id="latitud" name="latitud">
+            <input type="number" id="latitud" name="latitud" step="any">
 
             <label for="longitud">Longitud:</label>
-            <input type="text" id="longitud" name="longitud">
+            <input type="number" id="longitud" name="longitud" step="any">
+
+            <label for="contexto_historico">Contexto histórico:</label>
+            <textarea id="contexto_historico" name="contexto_historico"></textarea>
+
+            <label for="descripcion_proyecto_original">Descripción del proyecto original:</label>
+            <textarea id="descripcion_proyecto_original" name="descripcion_proyecto_original"></textarea>
+
+            <label for="orientacion">Orientación:</label>
+            <input type="text" id="orientacion" name="orientacion">
+
+            <label for="dimensiones">Dimensiones:</label>
+            <input type="text" id="dimensiones" name="dimensiones">
+
+            <label for="secciones">Secciones:</label>
+            <textarea id="secciones" name="secciones"></textarea>
+
+            <label for="elementos_imagen_urbana">Elementos de imagen urbana:</label>
+            <textarea id="elementos_imagen_urbana" name="elementos_imagen_urbana"></textarea>
+
+            <label for="tipos_edificaciones">Tipos de edificaciones:</label>
+            <input type="text" id="tipos_edificaciones" name="tipos_edificaciones">
+
+            <label for="transformaciones">Transformaciones:</label>
+            <textarea id="transformaciones" name="transformaciones"></textarea>
+
+            <label for="principios_diseno">Principios de diseño:</label>
+            <textarea id="principios_diseno" name="principios_diseno"></textarea>
 
             <input type="submit" value="Añadir espacio urbano">
         </form>
     <?php endif; ?>
+
 
 </body>
 </html>
