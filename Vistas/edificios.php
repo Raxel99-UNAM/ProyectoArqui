@@ -44,6 +44,19 @@ $result = mysqli_query($conn, $query);
         
 </head>
 <body>
+
+    <?php session_start(); ?>
+        <?php if (!isset($_SESSION['authenticated'])): ?>
+            <form action="check_password.php" method="post">
+                <label for="password">Ingrese la contraseña para añadir un nuevo edificio:</label>
+                <input type="password" id="password" name="password">
+                <input type="submit" value="Ingresar">
+            </form>
+            <?php if (isset($_GET['incorrect_password'])): ?>
+                <p>La contraseña ingresada es incorrecta.</p>
+            <?php endif; ?>
+        <?php endif; ?>
+    
     <div class="content-wrapper">
         <div class="header-bg">
             <header class="header container">
@@ -90,6 +103,24 @@ $result = mysqli_query($conn, $query);
         </p>
     </div>
 </footer>
+
+<?php if (isset($_SESSION['authenticated'])): ?>
+        <form action="insert_edificio.php" method="post">
+            <label for="nombre">Nombre del edificio:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="genero_tipologia">Género/Tipología:</label>
+            <input type="text" id="genero_tipologia" name="genero_tipologia">
+
+            <label for="uso_actual">Uso actual:</label>
+            <input type="text" id="uso_actual" name="uso_actual">
+
+            <label for="año_construccion">Año de construcción:</label>
+            <input type="text" id="año_construccion" name="año_construccion">
+
+            <input type="submit" value="Añadir edificio">
+        </form>
+    <?php endif; ?>
 
 </body>
 </html>
