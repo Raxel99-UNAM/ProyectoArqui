@@ -6,6 +6,7 @@ if (!isset($_SESSION['authenticated'])) {
     exit();
 }
 
+$arquitecto_id = $_POST['arquitecto_id'];
 $año_ciudad_nacimiento = $_POST['año_ciudad_nacimiento'];
 $lugar_estudios = $_POST['lugar_estudios'];
 $disciplina = $_POST['disciplina'];
@@ -18,7 +19,7 @@ if ($conexion->connect_error) {
     die("La conexión falló: " . $conexion->connect_error);
 }
 
-$query = "INSERT INTO biografias (año_ciudad_nacimiento, lugar_estudios, disciplina, principales_obras, elementos_caracteristicos) VALUES ('$año_ciudad_nacimiento', '$lugar_estudios', '$disciplina', '$principales_obras', '$elementos_caracteristicos')";
+$query = "INSERT INTO biografias (arquitecto_id, año_ciudad_nacimiento, lugar_estudios, disciplina, principales_obras, elementos_caracteristicos, activo) VALUES ('$arquitecto_id', '$año_ciudad_nacimiento', '$lugar_estudios', '$disciplina', '$principales_obras', '$elementos_caracteristicos', 1)";
 
 if ($conexion->query($query) === TRUE) {
     echo "Nueva biografía creada exitosamente";

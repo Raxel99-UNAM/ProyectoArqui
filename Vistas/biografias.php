@@ -1,7 +1,7 @@
 <?php
 require_once '../BaseDatos/db_connect.php';
 
-$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.biografia_id = biografias.id ORDER BY biografias.año_ciudad_nacimiento DESC";
+$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.id = biografias.arquitecto_id WHERE biografias.activo = 1 ORDER BY biografias.año_ciudad_nacimiento DESC";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -88,22 +88,26 @@ $result = mysqli_query($conn, $query);
     </footer>
     
     <?php if (isset($_SESSION['authenticated'])): ?>
-        <form action="insert_biografia.php" method="post">
+    <form action="insert_biografia.php" method="post">
+        <!-- Aquí agregarás una entrada para el ID del arquitecto -->
 
-            <label for="año_ciudad_nacimiento">Año y ciudad de nacimiento:</label>
-            <input type="text" id="año_ciudad_nacimiento" name="año_ciudad_nacimiento">
+        <label for="arquitecto_id">ID de arquitecto:</label>
+        <input type="number" id="arquitecto_id" name="arquitecto_id">
 
-            <label for="lugar_estudios">Lugar de estudios:</label>
-            <input type="text" id="lugar_estudios" name="lugar_estudios">
+        <label for="año_ciudad_nacimiento">Año y ciudad de nacimiento:</label>
+        <input type="text" id="año_ciudad_nacimiento" name="año_ciudad_nacimiento">
 
-            <label for="disciplina">Disciplina:</label>
-            <input type="text" id="disciplina" name="disciplina">
+        <label for="lugar_estudios">Lugar de estudios:</label>
+        <input type="text" id="lugar_estudios" name="lugar_estudios">
 
-            <label for="principales_obras">Principales obras:</label>
-            <input type="text" id="principales_obras" name="principales_obras">
+        <label for="disciplina">Disciplina:</label>
+        <input type="text" id="disciplina" name="disciplina">
 
-            <label for="elementos_caracteristicos">Elementos característicos:</label>
-            <input type="text" id="elementos_caracteristicos" name="elementos_caracteristicos">
+        <label for="principales_obras">Principales obras:</label>
+        <input type="text" id="principales_obras" name="principales_obras">
+
+        <label for="elementos_caracteristicos">Elementos característicos:</label>
+        <input type="text" id="elementos_caracteristicos" name="elementos_caracteristicos">
 
             <input type="submit" value="Añadir biografía">
         </form>
