@@ -33,6 +33,19 @@ $result = $conexion->query($sql);
 </head>
 
 <body>
+
+<?php session_start(); ?>
+    <?php if (!isset($_SESSION['authenticated'])): ?>
+        <form action="check_password.php" method="post">
+            <label for="password">Ingrese la contraseña para añadir un nuevo espacio urbano:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Ingresar">
+        </form>
+        <?php if (isset($_GET['incorrect_password'])): ?>
+            <p>La contraseña ingresada es incorrecta.</p>
+        <?php endif; ?>
+    <?php endif; ?>
+
 <div class="content-wrapper">
         <div class="header-bg">
             <header class="header container">
@@ -85,6 +98,27 @@ $result = $conexion->query($sql);
         </p>
     </div>
 </footer>
+
+<?php if (isset($_SESSION['authenticated'])): ?>
+        <form action="insert_espacioUrbano.php" method="post">
+            <label for="nombre">Nombre del espacio urbano:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="funcion">Función:</label>
+            <input type="text" id="funcion" name="funcion">
+
+            <label for="año_establecimiento">Año de establecimiento:</label>
+            <input type="text" id="año_establecimiento" name="año_establecimiento">
+
+            <label for="latitud">Latitud:</label>
+            <input type="text" id="latitud" name="latitud">
+
+            <label for="longitud">Longitud:</label>
+            <input type="text" id="longitud" name="longitud">
+
+            <input type="submit" value="Añadir espacio urbano">
+        </form>
+    <?php endif; ?>
 
 </body>
 </html>
