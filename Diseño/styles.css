@@ -226,7 +226,14 @@ body {
     flex-shrink: 0;
 }
 
-.biografia {
+.biografias-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Centra los elementos en la línea cuando hay espacio extra */
+    gap: 20px; /* Proporciona espacio entre los elementos */
+}
+
+.biografia-card {
     background: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -238,6 +245,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: calc(33% - 20px); /* Esto hace que tres tarjetas llenen una línea */
 }
 
 .biografia h2 {
@@ -304,7 +312,7 @@ body {
     color: #333;
 }
 
-/* Estilos para el formulario de inserción de edificios (solo visible cuando se ha autenticado) */
+/* Estilos para el formulario de inserción de edificios (solo visible cuando se ha autenticado)
 form {
     display: flex;
     flex-direction: column;
@@ -340,7 +348,7 @@ form input[type="submit"]:hover {
     background-color: #3076b0;
 }
 
-/* tus otros estilos existentes */
+tus otros estilos existentes */
 
 
 
@@ -350,4 +358,14 @@ form input[type="submit"]:hover {
     }
 }
 
+@media (max-width: 800px) {
+    .biografia-card {
+        width: calc(50% - 20px); /* Mostrar 2 tarjetas por línea en pantallas pequeñas */
+    }
+}
 
+@media (max-width: 500px) {
+    .biografia-card {
+        width: 100%; /* Mostrar 1 tarjeta por línea en pantallas muy pequeñas */
+    }
+}
