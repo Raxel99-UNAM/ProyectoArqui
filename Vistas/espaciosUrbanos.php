@@ -87,7 +87,7 @@ while ($espacio_urbano = mysqli_fetch_array($result)) {
     </div>
 <?php
 }
-$conexion->close();
+
 ?>
 
 <footer>
