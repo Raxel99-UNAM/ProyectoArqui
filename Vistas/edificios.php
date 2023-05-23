@@ -82,8 +82,18 @@ $result = mysqli_query($conn, $query);
                 echo "<p>Género/Tipología: " . $row['genero_tipologia'] . "</p>";
                 echo "<p>Uso Actual: " . $row['uso_actual'] . "</p>";
                 echo "<p>Año de Construcción: " . $row['año_construccion'] . "</p>";
+                echo "<p>Ubicación: " . $row['ubicacion'] . "</p>";
+                echo "<p>Contexto Histórico: " . $row['contexto_historico'] . "</p>";
+                echo "<p>Descripción Espacio: " . $row['descripcion_espacio'] . "</p>";
+                echo "<p>Plantas Arquitectónicas: " . $row['plantas_arquitectonicas'] . "</p>";
+                echo "<p>Fachadas y Ornamentos: " . $row['fachadas_ornamentos'] . "</p>";
+                echo "<p>Corriente Estilística: " . $row['corriente_estilistica'] . "</p>";
+                echo "<p>Materiales y Sistemas Constructivos: " . $row['materiales_sistemas_constructivos'] . "</p>";
+                echo "<p>Contexto Urbano: " . $row['contexto_urbano'] . "</p>";
+                echo "<p>Transformaciones: " . $row['transformaciones'] . "</p>";
                 echo "</div>";
             }
+            
             ?>
         </div>
         
@@ -109,18 +119,42 @@ $result = mysqli_query($conn, $query);
         <label for="nombre">Nombre del edificio:</label>
         <input type="text" id="nombre" name="nombre">
 
-        <label for="genero_tipologia">Género/Tipología:</label>
-        <input type="text" id="genero_tipologia" name="genero_tipologia">
+        <!-- Resto de los campos del antiguo formulario -->
 
-        <label for="uso_actual">Uso actual:</label>
-        <input type="text" id="uso_actual" name="uso_actual">
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion">
 
-        <label for="año_construccion">Año de construcción:</label>
-        <input type="text" id="año_construccion" name="año_construccion">
+        <label for="contexto_historico">Contexto histórico:</label>
+        <textarea id="contexto_historico" name="contexto_historico"></textarea>
+
+        <label for="descripcion_espacio">Descripción del espacio:</label>
+        <textarea id="descripcion_espacio" name="descripcion_espacio"></textarea>
+
+        <label for="plantas_arquitectonicas">Plantas arquitectónicas:</label>
+        <textarea id="plantas_arquitectonicas" name="plantas_arquitectonicas"></textarea>
+
+        <label for="fachadas_ornamentos">Fachadas y ornamentos:</label>
+        <textarea id="fachadas_ornamentos" name="fachadas_ornamentos"></textarea>
+
+        <label for="corriente_estilistica">Corriente estilística:</label>
+        <input type="text" id="corriente_estilistica" name="corriente_estilistica">
+
+        <label for="materiales_sistemas_constructivos">Materiales y sistemas constructivos:</label>
+        <textarea id="materiales_sistemas_constructivos" name="materiales_sistemas_constructivos"></textarea>
+
+        <label for="contexto_urbano">Contexto urbano:</label>
+        <textarea id="contexto_urbano" name="contexto_urbano"></textarea>
+
+        <label for="transformaciones">Transformaciones:</label>
+        <textarea id="transformaciones" name="transformaciones"></textarea>
+
+        <label for="activo">Activo:</label>
+        <input type="checkbox" id="activo" name="activo">
 
         <input type="submit" value="Añadir edificio">
     </form>
 <?php endif; ?>
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
