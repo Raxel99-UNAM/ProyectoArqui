@@ -113,7 +113,7 @@ body {
 .carousel img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* para asegurarse de que las imágenes cubran todo el espacio del carrusel */
+    object-fit: contain; /* para asegurarse de que las imágenes cubran todo el espacio del carrusel */
 }
 
 /* Estilos para la sección de noticias */
