@@ -98,15 +98,16 @@
 
     <script>
         $(document).ready(function() {
-            var url = 'https://newsapi.org/v2/top-headlines?country=mx&category=science&apiKey=9724a4f04fca45dfb9c4325c882a5741';
+            var url = 'https://newsapi.org/v2/top-headlines?country=mx&q=Edificio&apiKey=9724a4f04fca45dfb9c4325c882a5741';
             $.getJSON(url, function(data) {
                 var output = "";
                 for (var i = 0; i < data.articles.length && i < 3; i++) {
                     var noticia = data.articles[i];
+                    var descripcion = noticia.description ? noticia.description : ''; // verificar si la descripción existe
                     output += 
                         "<article>" +
                             "<h3>" + noticia.title + "</h3>" +
-                            "<p>" + noticia.description + "</p>" +
+                            "<p>" + descripcion + "</p>" + // usar la descripción o un string vacío
                             "<a href='" + noticia.url + "'>Leer más...</a>" +
                         "</article>";
                 }
@@ -114,6 +115,7 @@
             });
         });
     </script>
+    
     
 
     
