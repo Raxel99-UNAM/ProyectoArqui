@@ -335,8 +335,11 @@ body {
 
 .formulario input,
 .formulario textarea {
-    grid-column: 2;
+    width: 100%; /* Hace que los campos de entrada llenen su contenedor */
+    padding: 5px; /* Añade un poco de espacio dentro de los campos de entrada */
+    margin-bottom: 10px; /* Añade un poco de espacio entre los campos de entrada */
 }
+
 
 /* Estilos para el botón de envío */
 .formulario input[type="submit"] {

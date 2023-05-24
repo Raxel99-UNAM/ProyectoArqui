@@ -77,6 +77,7 @@ while ($espacio_urbano = mysqli_fetch_array($result)) {
 }
 
 ?>
+</div>
 
 <footer>
     <div class="Pie-pagina">
