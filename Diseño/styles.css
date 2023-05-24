@@ -260,6 +260,20 @@ body {
     color: #3498db;
 }
 
+.privacy {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.privacy a {
+    color: white;
+    text-decoration: none;
+}
+
+.privacy a:hover {
+    color: #3498db;
+}
+
 .footer-bottom {
     text-align: center;
     padding: 5px;
