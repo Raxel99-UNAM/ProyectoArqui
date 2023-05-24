@@ -27,19 +27,6 @@ $result = mysqli_query($conn, $query);
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-
-    <?php session_start(); ?>
-        <?php if (!isset($_SESSION['authenticated'])): ?>
-            <form action="check_password.php" method="post">
-                <label for="password">Ingrese la contraseña para añadir una nueva biografía:</label>
-                <input type="password" id="password" name="password">
-                <input type="submit" value="Ingresar">
-            </form>
-            <?php if (isset($_GET['incorrect_password'])): ?>
-                <p>La contraseña ingresada es incorrecta.</p>
-            <?php endif; ?>
-        <?php endif; ?>
-
     <div class="content-wrapper">
         <div class="header-bg">
             <header class="header container">
@@ -86,31 +73,5 @@ $result = mysqli_query($conn, $query);
             </p>
         </div>
     </footer>
-    
-    <?php if (isset($_SESSION['authenticated'])): ?>
-    <form action="insert_biografia.php" method="post">
-        <!-- Aquí agregarás una entrada para el ID del arquitecto -->
-
-        <label for="arquitecto_id">ID de arquitecto:</label>
-        <input type="number" id="arquitecto_id" name="arquitecto_id">
-
-        <label for="año_ciudad_nacimiento">Año y ciudad de nacimiento:</label>
-        <input type="text" id="año_ciudad_nacimiento" name="año_ciudad_nacimiento">
-
-        <label for="lugar_estudios">Lugar de estudios:</label>
-        <input type="text" id="lugar_estudios" name="lugar_estudios">
-
-        <label for="disciplina">Disciplina:</label>
-        <input type="text" id="disciplina" name="disciplina">
-
-        <label for="principales_obras">Principales obras:</label>
-        <input type="text" id="principales_obras" name="principales_obras">
-
-        <label for="elementos_caracteristicos">Elementos característicos:</label>
-        <input type="text" id="elementos_caracteristicos" name="elementos_caracteristicos">
-
-            <input type="submit" value="Añadir biografía">
-        </form>
-    <?php endif; ?>
 </body>
 </html>
