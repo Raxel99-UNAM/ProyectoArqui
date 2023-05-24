@@ -90,11 +90,15 @@ while ($espacio_urbano = mysqli_fetch_array($result)) {
                 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
             </div>
         </div>
+        <div class="privacy">
+            <a href="privacidad.html">Aviso de privacidad</a>
+        </div>
         <div class="footer-bottom">
             &copy; 2023 Espacio Arquitectónico en México
         </div>
     </div>
 </footer>
+
 
 
 
