@@ -397,7 +397,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px; /* Espacio entre elementos del formulario */
-    width: 80%; /* Ancho del formulario */
+    width: auto; /* Ancho del formulario */
     margin: auto; /* Centra el formulario */
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
@@ -424,31 +424,6 @@ body {
     justify-self: center; /* Centra el botón */
 }
 
-/* Estilos para el formulario de edificio */
-.form-container-edificio {
-    display: grid;
-    grid-template-columns: auto 1fr; /* ajustado para tener la etiqueta y el campo de entrada */
-    gap: 20px; /* Espacio entre elementos del formulario */
-    width: 80%; /* Ancho del formulario */
-    margin: auto; /* Centra el formulario */
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
-    border-radius: 10px; /* Esquinas redondeadas del formulario */
-}
-
-.formulario-edificio label {
-    text-align: right;
-    margin-right: 10px;
-}
-
-.formulario-edificio textarea {
-    grid-column: 2 / 3; /* Los textareas toman la segunda columna */
-}
-
-.formulario-edificio input[type="submit"] {
-    grid-column: 1 / 3; /* Hace que el botón se expanda a lo ancho del formulario */
-    justify-self: center; /* Centra el botón */
-}
 
 
 
