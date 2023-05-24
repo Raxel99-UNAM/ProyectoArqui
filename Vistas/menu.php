@@ -42,9 +42,15 @@
         <main>
             <section class="inicio container">
                 <h2 class="titulo">Bienvenido</h2>
-                    <div class="separador1">
-                        <div class="form-container">
-                            <form action="insert_edificio.php" method="post" class="formulario">
+                <div class="accordion">
+                    <!-- Acordión Edificios -->
+                    <div class="accordion-item">
+                        <div class="accordion-item-header">
+                            Añadir Edificio
+                        </div>
+                        <div class="accordion-item-body">
+                            <div class="form-container">
+                                <form action="insert_edificio.php" method="post" class="formulario">
                                 <label for="nombre">Nombre del edificio:</label>
                                 <input type="text" id="nombre" name="nombre">
 
@@ -79,13 +85,18 @@
                                 <input type="checkbox" id="activo" name="activo">
 
                                 <input type="submit" value="Añadir edificio">
-                            </form>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="separador2">
-                        <div class="form-container">
-                            <form action="insert_biografia.php" method="post" class="formulario">
+                    <!-- Acordión Biografías -->
+                    <div class="accordion-item">
+                        <div class="accordion-item-header">
+                            Añadir Biografía
+                        </div>
+                        <div class="accordion-item-body">
+                            <div class="form-container">
+                                <form action="insert_biografia.php" method="post" class="formulario">
                                 <label for="arquitecto_id">ID de arquitecto:</label>
                                 <input type="number" id="arquitecto_id" name="arquitecto_id">
 
@@ -104,13 +115,18 @@
                                 <label for="elementos_caracteristicos">Elementos característicos:</label>
                                 <input type="text" id="elementos_caracteristicos" name="elementos_caracteristicos">
                                 <input type="submit" value="Añadir biografía">
-                            </form>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="separador3">
-                        <div class="form-container">
-                            <form action="insert_espacioUrbano.php" method="post" class="formulario">
+                    <!-- Acordión Espacios Urbanos -->
+                    <div class="accordion-item">
+                        <div class="accordion-item-header">
+                            Añadir Espacio Urbano
+                        </div>
+                        <div class="accordion-item-body">
+                            <div class="form-container">
+                                <form action="insert_espacioUrbano.php" method="post" class="formulario">
                                 <label for="nombre">Nombre del espacio urbano:</label>
                                 <input type="text" id="nombre" name="nombre">
 
@@ -157,9 +173,10 @@
                                 <textarea id="principios_diseno" name="principios_diseno"></textarea>
 
                                 <input type="submit" value="Añadir espacio urbano">
-                            </form>
+                            </div>
                         </div>
                     </div>
+                </div>
             </section>
         </main>
     </div>
@@ -171,6 +188,24 @@
             </p>
         </div>
     </footer>
+    <script>
+        var accordions = document.getElementsByClassName("accordion-item");
+
+        for (var i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function() {
+                this.classList.toggle('is-open');
+
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    // si está abierto, ciérralo
+                    content.style.maxHeight = null;
+                } else {
+                    // si está cerrado, ábrelo
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } 
+            }
+        }
+    </script>
 </body>
 
 </html>

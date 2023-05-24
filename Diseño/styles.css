@@ -362,19 +362,37 @@ body {
     background: #0056b3;
 }
 
-
-
-
-/* Estilos para el formulario de inserción de edificios (solo visible cuando se ha autenticado)*/
-/* Estilos de la rejilla de los formularios */
-.separador1,
-.separador2,
-.separador3 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px; /* Espacio entre formularios */
+/* Estilos para el acordeón */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
+.accordion-item {
+    background: #f4f4f4;
+    color: #333;
+    margin: 1px 0;
+    border-radius: 5px;
+}
+
+.accordion-item-header {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-item.is-open .accordion-item-body {
+    max-height: 1000px; /* ajusta este valor a tus necesidades */
+}
+
+/* Estilos de la rejilla de los formularios */
 .form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -405,8 +423,6 @@ body {
     grid-column: 1 / 3; /* Hace que el botón se expanda a lo ancho del formulario */
     justify-self: center; /* Centra el botón */
 }
-
-
 
 
 @media only screen and (max-width: 768px) {
