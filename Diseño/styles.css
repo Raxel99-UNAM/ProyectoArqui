@@ -106,8 +106,8 @@ body {
 /* Estilos para el carrusel de Bootstrap */
 .carousel {
     width: 100%;
-    height: 500px; /* ajusta a tu preferencia */
-    margin-bottom: 20px;
+    height: 250px; /* ajusta a tu preferencia */
+    margin-bottom:40px;
 }
 
 .carousel img {
