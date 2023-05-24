@@ -305,6 +305,18 @@ body {
     color: #333;
 }
 
+
+/* Estilos para centrar el formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Ajusta este valor según el tamaño de tu header y footer */
+}
+
+
+
 /* Estilos para el formulario de inserción de edificios (solo visible cuando se ha autenticado)*/
 /* Estilos de la rejilla de los formularios */
 .separador1,

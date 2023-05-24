@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </header>
             </div>
 
-        <div class="form-container login-container">
+        <div class="login-container">
             <form class="formulario" action="" method="POST">
                 <label for="username">Nombre de usuario:</label>
                 <input type="text" id="username" name="username" required>
