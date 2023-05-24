@@ -105,6 +105,7 @@ body {
 
 /* Estilos para la sección de noticias */
 .noticias {
+    width: 100%; /* Asegúrate que la sección de noticias ocupe todo el ancho */
     margin: 20px 0;
     padding: 20px;
     background-color: white;
@@ -113,50 +114,59 @@ body {
 }
 
 .noticias .titulo {
-    font-size: 24px; /* ajusta según prefieras */
+    font-size: 24px; 
     margin-bottom: 20px;
-    color: #8B4513; /* puedes ajustar el color */
+    color: #8B4513; 
     text-align: center;
 }
 
 .noticias article {
-    border-bottom: 1px solid #ccc; /* línea divisoria entre noticias */
-    padding-bottom: 20px; /* espacio al final de cada noticia */
-    margin-bottom: 20px; /* espacio entre noticias */
-}
-
-.noticias article h3 {
-    font-size: 20px; /* ajusta según prefieras */
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.noticias article p {
-    font-size: 16px; /* ajusta según prefieras */
-    text-align: justify;
-    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 20px; 
+    margin-bottom: 20px; 
+    display: flex; /* Esto hará que el contenido del artículo se distribuya en una línea */
+    align-items: center; /* Alineará los elementos verticalmente */
+    flex-wrap: wrap; /* Si no hay espacio suficiente, los elementos pasarán a la siguiente línea */
 }
 
 .noticias article img {
-    width: 100%; /* ajusta según prefieras */
-    height: auto; /* ajusta según prefieras */
+    width: 300px; /* Podrías ajustar este valor a tu preferencia */
+    height: auto;
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+    margin-bottom: 15px;
+    flex: 0 0 auto; /* Esto evitará que la imagen cambie de tamaño */
+}
+
+.noticias article div {
+    flex-grow: 1; /* Esto hará que el div ocupe el espacio restante */
+}
+
+.noticias article h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.noticias article p {
+    font-size: 16px;
+    text-align: justify;
     margin-bottom: 15px;
 }
 
 .noticias article a {
     display: inline-block;
     text-decoration: none;
-    color: #8B4513; /* puedes ajustar el color */
+    color: #8B4513;
     font-weight: bold;
-    background-color: #E6C592; /* puedes ajustar el color */
+    background-color: #E6C592;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .noticias article a:hover {
-    background-color: #D2AD7F; /* puedes ajustar el color */
+    background-color: #D2AD7F; 
 }
+
 
 
 

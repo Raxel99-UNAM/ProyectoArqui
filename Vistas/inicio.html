@@ -95,25 +95,30 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        $(document).ready(function() {
-            var url = 'https://newsapi.org/v2/top-headlines?country=mx&category=science&apiKey=9724a4f04fca45dfb9c4325c882a5741';
-            $.getJSON(url, function(data) {
-                var output = "";
-                for (var i in data.articles) {
-                    output += 
-                        "<article>" +
-                            "<h3>" + data.articles[i].title + "</h3>" +
-                            "<img src='" + data.articles[i].urlToImage + "' alt='Imagen de noticia'>" +
-                            "<p>" + data.articles[i].description + "</p>" +
-                            "<a href='" + data.articles[i].url + "'>Leer más...</a>" +
-                        "</article>";
-                }
-                $('#noticias').html(output);
-            });
+
+<script>
+    $(document).ready(function() {
+        var url = 'https://newsapi.org/v2/top-headlines?country=mx&q=arquitectura&apiKey=9724a4f04fca45dfb9c4325c882a5741';
+        $.getJSON(url, function(data) {
+            var output = "";
+            for (var i = 0; i < data.articles.length; i++) {
+                if (i >= 3) break; // Esto limita las noticias a las primeras 3
+                var noticia = data.articles[i];
+                var imagen = noticia.urlToImage ? noticia.urlToImage : 'ruta/a/tu/imagen/por/defecto.jpg';
+                output += 
+                    "<article>" +
+                        "<h3>" + noticia.title + "</h3>" +
+                        "<img src='" + imagen + "' alt='Imagen de noticia'>" +
+                        "<p>" + noticia.description + "</p>" +
+                        "<a href='" + noticia.url + "'>Leer más...</a>" +
+                    "</article>";
+            }
+            $('#noticias').html(output);
         });
-    </script>
+    });
+</script>
+
+    
 
 </body>
 </html>
