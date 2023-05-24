@@ -151,7 +151,8 @@ body {
     font-weight: bold;
     background-color: #E6C592;
     padding: auto;
-    margin: 10px 0; /* Espacio externo alrededor del botón */
+    margin-top: 10px; /* Espacio externo alrededor del botón */
+    margin-left: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
