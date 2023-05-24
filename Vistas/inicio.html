@@ -98,7 +98,7 @@
 
     <script>
         $(document).ready(function() {
-            var url = 'https://newsapi.org/v2/top-headlines?country=mx&q=Edificio&apiKey=9724a4f04fca45dfb9c4325c882a5741';
+            var url = 'https://newsapi.org/v2/top-headlines?country=mx&q=science&apiKey=9724a4f04fca45dfb9c4325c882a5741';
             $.getJSON(url, function(data) {
                 var output = "";
                 for (var i = 0; i < data.articles.length && i < 3; i++) {
