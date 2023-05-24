@@ -119,6 +119,24 @@ body {
     text-align: center;
 }
 
+.noticias article {
+    border-bottom: 1px solid #ccc; /* línea divisoria entre noticias */
+    padding-bottom: 20px; /* espacio al final de cada noticia */
+    margin-bottom: 20px; /* espacio entre noticias */
+}
+
+.noticias article h3 {
+    font-size: 20px; /* ajusta según prefieras */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.noticias article p {
+    font-size: 16px; /* ajusta según prefieras */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
 .noticias article img {
     width: 100%; /* ajusta según prefieras */
     height: auto; /* ajusta según prefieras */
