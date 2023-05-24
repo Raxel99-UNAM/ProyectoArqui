@@ -103,7 +103,56 @@ body {
     text-decoration: underline;
 }
 
-/* Estilo para el menú de navegación */
+/* Estilos para el carrusel de Bootstrap */
+.carousel {
+    width: 100%;
+    height: 500px; /* ajusta a tu preferencia */
+    margin-bottom: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* para asegurarse de que las imágenes cubran todo el espacio del carrusel */
+}
+
+/* Estilos para la sección de noticias */
+.noticias {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.noticias .titulo {
+    font-size: 24px; /* ajusta según prefieras */
+    margin-bottom: 20px;
+    color: #8B4513; /* puedes ajustar el color */
+    text-align: center;
+}
+
+.noticias article {
+    border-bottom: 1px solid #ccc; /* línea divisoria entre noticias */
+    padding-bottom: 20px; /* espacio al final de cada noticia */
+    margin-bottom: 20px; /* espacio entre noticias */
+}
+
+.noticias article h3 {
+    font-size: 20px; /* ajusta según prefieras */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.noticias article p {
+    font-size: 16px; /* ajusta según prefieras */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+
+
+/* Estilo para el menú de navegación el cual no sé si sí está jalando */
 .navbar {
     display: flex;
     background-color: #333;
