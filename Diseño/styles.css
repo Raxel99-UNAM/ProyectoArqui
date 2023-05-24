@@ -427,7 +427,7 @@ body {
 /* Estilos para el formulario de edificio */
 .form-container-edificio {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 1fr; /* ajustado para tener la etiqueta y el campo de entrada */
     gap: 20px; /* Espacio entre elementos del formulario */
     width: 80%; /* Ancho del formulario */
     margin: auto; /* Centra el formulario */
@@ -436,25 +436,20 @@ body {
     border-radius: 10px; /* Esquinas redondeadas del formulario */
 }
 
-.formulario-edificio textarea {
-    grid-column: 1 / 3; /* Hace que los textarea se expandan a lo ancho del formulario */
-}
-
 .formulario-edificio label {
-    grid-column: 1;
     text-align: right;
     margin-right: 10px;
 }
 
-.formulario-edificio input[type="text"],
-.formulario-edificio input[type="checkbox"] {
-    grid-column: 2;
+.formulario-edificio textarea {
+    grid-column: 2 / 3; /* Los textareas toman la segunda columna */
 }
 
 .formulario-edificio input[type="submit"] {
     grid-column: 1 / 3; /* Hace que el botón se expanda a lo ancho del formulario */
     justify-self: center; /* Centra el botón */
 }
+
 
 
 @media only screen and (max-width: 768px) {
