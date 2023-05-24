@@ -129,14 +129,6 @@ body {
     flex-wrap: wrap; /* Si no hay espacio suficiente, los elementos pasarán a la siguiente línea */
 }
 
-.noticias article img {
-    width: 300px; /* Podrías ajustar este valor a tu preferencia */
-    height: auto;
-    margin-right: 20px; /* Espacio a la derecha de la imagen */
-    margin-bottom: 15px;
-    flex: 0 0 auto; /* Esto evitará que la imagen cambie de tamaño */
-}
-
 .noticias article div {
     flex-grow: 1; /* Esto hará que el div ocupe el espacio restante */
 }
