@@ -60,21 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </header>
             </div>
 
-    <div class="container">
-        <form action="" method="POST">
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" name="username" required>
+        <div class="container">
+            <form action="" method="POST">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
 
-            <input type="submit" value="Ingresar">
-        </form>
+                <input type="submit" value="Ingresar">
+            </form>
 
-        <?php if (!empty($error)): ?>
-            <p><?php echo $error; ?></p>
-        <?php endif; ?>
-    </div>        
+            <?php if (!empty($error)): ?>
+                <p><?php echo $error; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
 
 <footer>
     <div class="Pie-pagina">
