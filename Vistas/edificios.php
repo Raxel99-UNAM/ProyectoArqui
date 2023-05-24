@@ -95,35 +95,22 @@ $result = mysqli_query($conn, $query);
     </div>
 
     <footer>
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h2 class="footer-title">Sobre nosotros</h2>
-                        <p>
-                    Espacio Arquitectónico en México es un sitio web dedicado a la arquitectura y el diseño urbano en México. Explora nuestras secciones para conocer más.
-                        </p>
-                </div>
-                <div class="footer-section social">
-                    <h2 class="footer-title">Síguenos</h2>
-                        <ul>
-                            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-                            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-                            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-                            <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
-                        </ul>
-                </div>
-                <div class="footer-section contact">
-                    <h2 class="footer-title">Contacto</h2>
-                        <p>
-                            info@espacioarquitectonico.com.mx
-                        </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-            &copy; 2023 Espacio Arquitectónico en México
+    <div class="footer">
+        <div class="footer-content">
+            <h2 class="footer-title">Síguenos</h2>
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+                <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+                <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            &copy; 2023 Espacio Arquitectónico en México
+        </div>
+    </div>
+</footer>
+
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
