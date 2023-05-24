@@ -49,8 +49,8 @@
                             Añadir Edificio
                         </div>
                         <div class="accordion-item-body">
-                            <div class="form-container">
-                                <form action="insert_edificio.php" method="post" class="formulario">
+                            <div class="form-container-edificio">
+                                <form action="insert_edificio.php" method="post" class="formulario-edificio">
                                 <label for="nombre">Nombre del edificio:</label>
                                 <input type="text" id="nombre" name="nombre">
 
