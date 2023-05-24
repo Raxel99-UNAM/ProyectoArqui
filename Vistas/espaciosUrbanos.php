@@ -1,7 +1,7 @@
 <?php
 require_once '../BaseDatos/db_connect.php';
 
-$query = "SELECT * FROM espacios_urbanos WHERE activo = 1 ORDER BY nombre";
+$query = "SELECT * FROM espacios_urbanos ORDER BY nombre";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -57,6 +57,10 @@ while ($espacio_urbano = mysqli_fetch_array($result)) {
             <h2><?php echo $espacio_urbano['nombre']; ?></h2>
             <p><?php echo $espacio_urbano['funcion']; ?></p>
             <p><?php echo $espacio_urbano['año_establecimiento']; ?></p>
+            <p><?php echo $espacio_urbano['arquitecto_id']; ?></p>
+            <p><?php echo $espacio_urbano['contexto_historico']; ?></p>
+            <p><?php echo $espacio_urbano['orientacion']; ?></p>
+            <p><?php echo $espacio_urbano['transformaciones']; ?></p>
             <!-- Aquí creamos el div donde se mostrará el mapa -->
             <div id="mapa_<?php echo $espacio_urbano['id']; ?>" style="width: 100%; height: 400px;"></div>
             <!-- Aquí creamos el script para mostrar el mapa -->

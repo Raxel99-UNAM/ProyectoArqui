@@ -1,7 +1,7 @@
 <?php
 require_once '../BaseDatos/db_connect.php';
 
-$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.id = biografias.arquitecto_id WHERE biografias.activo = 1 ORDER BY biografias.año_ciudad_nacimiento DESC";
+$query = "SELECT arquitectos.nombre, biografias.* FROM biografias JOIN arquitectos ON arquitectos.id = biografias.arquitecto_id ORDER BY biografias.año_ciudad_nacimiento DESC";
 $result = mysqli_query($conn, $query);
 ?>
 

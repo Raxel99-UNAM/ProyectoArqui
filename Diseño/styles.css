@@ -223,24 +223,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     overflow: hidden;
     min-width: 300px;
     max-width: 600px;
-    margin: 40px auto 0px;
+    margin: 40px auto;
+    background-color: white; /* color de fondo */
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 1px solid #ccc; /* línea divisoria */
 }
 
 .card-content {
     padding: 20px;
-    background-color: white;
     width: 100%;
 }
 
@@ -248,24 +248,33 @@ body {
     margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
+    color: #4e8aec; /* Color del título */
+    font-size: 24px; /* Tamaño del título */
 }
 
 .card-content p {
     text-align: justify;
     margin-bottom: 15px;
+    font-size: 16px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
 }
 
 .card-content a {
     display: block;
     text-align: right;
     text-decoration: none;
-    color: #4e8aec;
+    color: #8B4513; /* Color del enlace */
     font-weight: bold;
+    padding: 10px; /* Espacio interno del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
 }
 
 .card-content a:hover {
-    text-decoration: underline;
+    background-color: #E6C592; /* Color de fondo al pasar el ratón */
+    text-decoration: none; /* Sin subrayado al pasar el ratón */
 }
+
 
 /* checa bien el margin-botton */
 
