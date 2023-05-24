@@ -215,7 +215,7 @@ body {
 }
 
 .Pie-pagina {
-    height: 150px;
+    height: 100px;
     background-color: rgb(53, 52, 52);
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
@@ -335,11 +335,10 @@ body {
 
 .formulario input,
 .formulario textarea {
-    width: 100%; /* Hace que los campos de entrada llenen su contenedor */
+    max-width: 400px; /* Ajusta este valor a tus necesidades */
     padding: 5px; /* Añade un poco de espacio dentro de los campos de entrada */
     margin-bottom: 10px; /* Añade un poco de espacio entre los campos de entrada */
 }
-
 
 /* Estilos para el botón de envío */
 .formulario input[type="submit"] {
