@@ -55,12 +55,12 @@ while ($espacio_urbano = mysqli_fetch_array($result)) {
     <div class="card">
         <div class="card-content">
             <h2><?php echo $espacio_urbano['nombre']; ?></h2>
-            <p><?php echo $espacio_urbano['funcion']; ?></p>
-            <p><?php echo $espacio_urbano['año_establecimiento']; ?></p>
-            <p><?php echo $espacio_urbano['arquitecto_id']; ?></p>
-            <p><?php echo $espacio_urbano['contexto_historico']; ?></p>
-            <p><?php echo $espacio_urbano['orientacion']; ?></p>
-            <p><?php echo $espacio_urbano['transformaciones']; ?></p>
+            <p>Funcion: <?php echo $espacio_urbano['funcion']; ?></p>
+            <p>Año de establecimiento: <?php echo $espacio_urbano['año_establecimiento']; ?></p>
+            <p>Arquitecto: <?php echo $espacio_urbano['arquitecto_id']; ?></p>
+            <p>Contexto histórico: <?php echo $espacio_urbano['contexto_historico']; ?></p>
+            <p>Orientación: <?php echo $espacio_urbano['orientacion']; ?></p>
+            <p>transformaciones: <?php echo $espacio_urbano['transformaciones']; ?></p>
             <!-- Aquí creamos el div donde se mostrará el mapa -->
             <div id="mapa_<?php echo $espacio_urbano['id']; ?>" style="width: 100%; height: 400px;"></div>
             <!-- Aquí creamos el script para mostrar el mapa -->

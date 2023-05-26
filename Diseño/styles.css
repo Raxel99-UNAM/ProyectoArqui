@@ -229,7 +229,8 @@ body {
     min-width: 300px;
     max-width: 600px;
     margin: 40px auto;
-    background-color: white; /* color de fondo */
+    background-color: white;
+    padding: 15px; /* Añade un padding para separar el contenido de los bordes */
 }
 
 .card img {
@@ -242,38 +243,44 @@ body {
 .card-content {
     padding: 20px;
     width: 100%;
+    display: flex; /* Usa flex para organizar el contenido */
+    flex-direction: column; /* Alinea el contenido verticalmente */
+    align-items: start; /* Alinea el contenido a la izquierda */
 }
 
 .card-content h2 {
     margin-top: 0;
     margin-bottom: 10px;
-    text-align: center;
-    color: #4e8aec; /* Color del título */
-    font-size: 24px; /* Tamaño del título */
+    text-align: left; /* Alinea el título a la izquierda */
+    color: #8B4513;
+    font-size: 24px;
 }
 
 .card-content p {
     text-align: justify;
     margin-bottom: 15px;
-    font-size: 16px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5; /* Añade espacio entre las líneas de texto */
 }
 
 .card-content a {
     display: block;
     text-align: right;
     text-decoration: none;
-    color: #8B4513; /* Color del enlace */
+    color: #8B4513;
     font-weight: bold;
-    padding: 10px; /* Espacio interno del enlace */
-    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-top: auto; /* Asegura que el enlace siempre esté en la parte inferior */
 }
 
 .card-content a:hover {
-    background-color: #E6C592; /* Color de fondo al pasar el ratón */
-    text-decoration: none; /* Sin subrayado al pasar el ratón */
+    background-color: #E6C592;
+    text-decoration: none;
 }
+
 
 
 /* checa bien el margin-botton */
